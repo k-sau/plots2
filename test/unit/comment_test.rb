@@ -352,4 +352,10 @@ class CommentTest < ActiveSupport::TestCase
     f.close()
   end
 
+  test 'should save comment with emojis' do
+    comment = Comment.new
+    comment.comment = "Comment with Emojis 😎😎😎"
+    assert comment.save
+  end
+
 end
